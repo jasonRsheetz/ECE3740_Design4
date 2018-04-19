@@ -1,3 +1,13 @@
+/*
+Jason Sheetz, David Carlson
+Group 2
+Design 4
+4/19/18
+
+This project outputs a serial sequene of SIG according to M0 and M1, the SYNC line is high on the first bit of every sequence.
+the SEQ line is high when the sequence 0110 is output.
+*/
+
 module Design4(SIG, SYNC, SEQ, CLK, M0, M1, G0);
 output reg SYNC;
 output reg SIG;
@@ -139,17 +149,19 @@ end else if(G0 == 1'b0) SIG = 1'b0;
 //end always
 end
 
+
+// Define some temparary values/varilables to hold input -- to be evaluated
 integer seq_counter = 0;
 reg [3:0] seq_match = 0110;
 reg[3:0] seq_test = 0000;
 integer seq_flag = 0;
 integer seq_detect = 0;
-always @(posedge CLK)begin
+always @(posedge CLK)begin // Every clock edge, check for sync
 
 	SEQ = 1'b0;
 	
 	if(SYNC == 1'b1)begin
-		seq_flag = 1;
+		seq_flag = 1; // A value/stream as started, look for match.
 	end
 	
 		if(seq_flag == 1)begin
@@ -160,6 +172,7 @@ always @(posedge CLK)begin
 				2: seq_test[2] <= SIG;
 				3: seq_test[3] <= SIG;
 			endcase
+						// We have saved 4bits. Lets compare stuff
 
 			seq_counter <= seq_counter + 1;
 		
@@ -167,20 +180,19 @@ always @(posedge CLK)begin
 	
 				seq_flag = 0;
 				seq_counter <= 0;
-				
+						// Check for matches to 0110
 				if(seq_test[0] == 0)begin
 					if(seq_test[1] == 1)begin
 						if(seq_test[2] == 1)begin
 							if(seq_test[3] == 0)begin
 								SEQ = 1'b1;
-							end else if(seq_test[3] != 0)SEQ = 1'b0;
+								// We have a match, output SEQ
+							end else if(seq_test[3] != 0)SEQ = 1'b0; // No match, keep SEQ 0;
 						end
 					end
-				end
-						
+				end	
 			end
+		end
 	end
-
-end
 
 endmodule
