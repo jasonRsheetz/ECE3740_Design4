@@ -1,0 +1,9 @@
+module Design4(SIG, SYNC, CLK, M0, M1, G0)
+output reg SYNC, SIG;
+input CLK, M0, M1, G0;
+
+
+
+
+
+endmodule

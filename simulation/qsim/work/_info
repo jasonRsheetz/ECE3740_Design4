@@ -1,0 +1,75 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/jason/Documents/skewl/ECE3740/Design4/Design4/simulation/qsim
+vDesign4
+Z1 !s110 1524107253
+!i10b 1
+!s100 G?@3bng0:<:Y5ENLS`Rdz2
+I83b[l2lYMh98WoH5V>nf@0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1524107251
+Z4 8Design4.vo
+Z5 FDesign4.vo
+L0 32
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1524107253.000000
+Z8 !s107 Design4.vo|
+Z9 !s90 -work|work|Design4.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@design4
+vDesign4_vlg_vec_tst
+R1
+!i10b 1
+!s100 i]cI19GAg0MkcDf?4ni4B1
+ITBHWNAEb:cbMf<QFEE;eX2
+R2
+R0
+w1524107249
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+n@design4_vlg_vec_tst
+vhard_block
+R1
+!i10b 1
+!s100 bbD2cRYGcEK`1hE[>`h7[3
+I9J0MAK_abY<haf_9NM^PZ2
+R2
+R0
+R3
+R4
+R5
+L0 3673
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

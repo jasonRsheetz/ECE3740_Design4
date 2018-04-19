@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Design4.v(13): always construct contains both blocking and non-blocking assignments File: /home/jason/Documents/skewl/ECE3740/Design4/Design4/Design4.v Line: 13
+Warning (10268): Verilog HDL information at Design4.v(140): always construct contains both blocking and non-blocking assignments File: /home/jason/Documents/skewl/ECE3740/Design4/Design4/Design4.v Line: 140
