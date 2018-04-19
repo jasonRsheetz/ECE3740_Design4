@@ -9,17 +9,24 @@ reg [3:0] TEN = 1010;
 reg [3:0] FIFTEEN = 1111;
 integer counter = 0;
 integer flag = 0;
+reg M0_capture;
+reg M1_capture;
 
 always @(posedge CLK)begin
+
+if(counter == 3) M0_capture <= M0; M1_capture <= M1;
 
 //if the G0 is asserted begin the appropriate sequence
 if(G0 == 1'b1)begin
 flag = 1;
+
 end else if(G0 == 1'b0) SIG = 1'b0;
 
 	if(flag == 1)begin
 
-	if(M0 == 0 && M1 == 0)begin
+	
+	
+	if(M0_capture == 0 && M1_capture == 0)begin
 			
 				case (counter)
 					0:	SIG <= NINE[counter];
@@ -46,7 +53,7 @@ end else if(G0 == 1'b0) SIG = 1'b0;
 					end
 		
 		//end m0 == m1 == 0 if
-		end else if(M0 == 0 && M1 == 1)begin
+		end else if(M0_capture == 0 && M1_capture == 1)begin
 			
 				case (counter)
 					0:	SIG <= 1'b0;
@@ -73,7 +80,7 @@ end else if(G0 == 1'b0) SIG = 1'b0;
 					end
 		
 		//end m0 == m1 == 0 if
-		end else if(M0 == 1 && M1 == 0)begin
+		end else if(M0_capture == 1 && M1_capture == 0)begin
 			
 				case (counter)
 					0:	SIG <= 1'b1;
@@ -98,7 +105,7 @@ end else if(G0 == 1'b0) SIG = 1'b0;
 					end
 		
 		//end m0 == m1 == 0 if
-		end else if(M0 == 1 && M1 == 1)begin
+		end else if(M0_capture == 1 && M1_capture == 1)begin
 			
 				case (counter)
 					0:	SIG <= 1'b1;
